@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-shop</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h3>LOGO</h3>
+        </div>
+        <div>
+            <ul class="navigation-list">
+                <li class="navigation-item"><a href="#">Search</a></li>
+                <li class="navigation-item"><a href="#">Login</a></li>
+            </ul>
+        </div>       
+    </header>
+    <main>
+        <h1>Eshop</h1>
+        <div id="products-container" class="items-container">            
+            <template id="product-card-template">
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-description"></p>
+                        <p class="card-price"></p>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </div>
+                </div>
+            </template>            
+        </div>
+    </main>
+    <footer>
+        <p>e-shop 2021</p>
+    </footer>
+</body>
+<script type="module" defer src="script.js"></script>
+</html>

@@ -1,0 +1,66 @@
+header {
+    background: #8ab65e;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    margin: 0 10px;
+}
+
+.navigation-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.navigation-item {
+    margin: 0 10px;
+}
+
+.navigation-item a {
+    text-decoration: none;
+    color: #000000;
+}
+
+main {
+    padding: 0 2em;
+}
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 100px;
+    height: 150px;
+}
+
+.card {
+    width: 18rem;
+    background: #9fb8e7;
+    margin: 20px 20px;
+}
+
+.card-body {
+    margin: 10px 10px;
+}
+
+/*maybe flex is not needed there*/
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: #8ab65e;
+}
