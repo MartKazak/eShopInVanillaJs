@@ -1,19 +1,33 @@
 export const API_URL = "http://localhost:3000";
 
-export const getJson = async function(url) {
+export const get = async function(url) {
     const response = await fetch(url);
-    const data = await response.json();
-    
+    const data = response.json();
     return data;
 };
 
-export const post = async function(url, data = {}) {
-    const response = await fetch(url, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.        
-        headers: {
-          'Content-Type': 'application/json'          
-        },        
-        body: JSON.stringify(data) // body data type must match "Content-Type" header
-      });
-      return response.json(); // parses JSON response into native JavaScript objects
+export async function post(url, data = {}) {
+    return await request(url, "POST", data);
 };
+
+export async function put(url, data = {}) {
+    return await request(url, "PUT", data);
+};
+
+export async function xdelete(url) {
+    return await request(url, "DELETE");
+};
+
+async function request(url, method, data = {}) {
+    const requestParams = {
+        method: method,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    };
+    const request = new Request(url, requestParams);
+    const response = await fetch(request);
+
+    return response.json();
+}
