@@ -1,6 +1,6 @@
 export const API_URL = "http://localhost:3000";
 
-export const get = async function(url) {
+export async function get(url) {
     const response = await fetch(url);
     const data = response.json();
     return data;
