@@ -1,7 +1,15 @@
 import { API_URL, get, post, put, xdelete } from "./http-helper.js";
+import Product from "./src/product.js";
+import Products from "./src/products.js";
+
+import {showProducts} from "./src/controller.js";
+
+showProducts();
 
 async function getProducts() {
-    const products = await get(`${API_URL}/products`);
+    const results = await get(`${API_URL}/products`);
+    const mappedProducts = results.map(r => new Product(r.id, r.title, r.description, r.price));
+    const products = new Products(mappedProducts);
     console.log(products);
     createProductCard(products);
 };
@@ -23,17 +31,17 @@ function createProductCard(products = []) {
 
 ["load"].forEach(event => {
     window.addEventListener(event, getProducts());
-    const productsContainer = document.getElementById("products-container");
+    // const productsContainer = document.getElementById("products-container");
 
-    const updateProductElement = document.querySelector(".update-product");
-    console.log(updateProductElement)
-    // console.log(productsContainer)
-    updateProductElement.addEventListener("submit", function(e) {
-        e.preventDefault();
-      const dataArr = [...new FormData(this)];
-      const data = Object.fromEntries(dataArr);
-      put(`${API_URL}/products/6`, data)
-        console.log("DATA:", data)
-    });
+    // const updateProductElement = document.querySelector(".update-product");
+    // console.log(updateProductElement)
+    // // console.log(productsContainer)
+    // updateProductElement.addEventListener("submit", function(e) {
+    //     e.preventDefault();
+    //   const dataArr = [...new FormData(this)];
+    //   const data = Object.fromEntries(dataArr);
+    //   put(`${API_URL}/products/6`, data)
+    //     console.log("DATA:", data)
+    //});
 });
 
