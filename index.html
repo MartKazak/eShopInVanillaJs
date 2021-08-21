@@ -21,27 +21,11 @@
         </header>
         <main>
             <h1>Eshop</h1>
-            <div id="add-product-container">
-                <div class="card">
-                    <form id="add-product-form">
-                        <div>
-                            <label>Price</label>
-                            <input required  type="text" name="price" value="1000">
-                            <label>Title</label>
-                            <input required  type="text" name="title" value="title updated">
-                            <label>Description</label>
-                            <input required type="text" name="description" value="description updated">
-                            <input type="submit" value="Submit">
-                        </div>
-
-                    </form>
-                </div>
+            <div>
+                <button id="btn-add-product" type="button">+ Add product</button>
             </div>
             <div id="products-container" class="items-container"></div>
-            <!-- <div class="modal-container">
-
-            </div> -->
-
+            <div id="update-product-container"></div>
         </main>
         <footer>
             <p>e-shop 2021</p>
@@ -57,10 +41,22 @@
                 <p class="card-price"></p>
             </div>
             <div class="card-footer">
-                <button type="button">Edit</button>
+                <button id="btn-update-product" type="button">Edit</button>
                 <button type="button">Delete</button>
             </div>
         </div>
+    </template>
+    <template id="add-product-template">
+        <form id="add-product-form">
+            <div>
+                <label>Price</label>
+                <input required  type="text" name="price" value="1000">
+                <label>Title</label>
+                <input required  type="text" name="title" value="title updated">
+                <label>Description</label>
+                <input required type="text" name="description" value="description updated">
+            </div>
+        </form>
     </template>
     <script type="module" defer src="src/controller.js"></script>
 </html>
