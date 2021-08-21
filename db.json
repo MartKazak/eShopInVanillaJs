@@ -29,6 +29,30 @@
       "title": "Product 5",
       "description": "Product 5 description",
       "price": 300
+    },
+    {
+      "price": "1000",
+      "title": "title updated",
+      "description": "description updated",
+      "id": 6
+    },
+    {
+      "price": "1000",
+      "title": "title updated",
+      "description": "description updated",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "title": "title updated",
+      "description": "description updated",
+      "price": "1000"
+    },
+    {
+      "id": 9,
+      "title": "title updated",
+      "description": "description updated",
+      "price": "1000"
     }
   ]
 }

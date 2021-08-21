@@ -8,6 +8,10 @@ class ProductsView {
         this.#generateMarkup();
     }
 
+    addHandlerRender(handler) {
+        ["load"].forEach(event => window.addEventListener(event, handler));
+    }
+
     #clear() {
         this.#parentElement.innerHTML = "";
     }
