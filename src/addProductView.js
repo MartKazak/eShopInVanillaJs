@@ -7,9 +7,7 @@ class AddProductView {
 
     addHandlerSaveProduct(handler) {
         const self = this;
-        console.log(this.#btnOpenAddProductModal);
         this.#btnOpenAddProductModal.addEventListener("click", async function(e) {
-            console.log("Add....");
             e.preventDefault();
             const addProductModal = new SimpleModal("Add product", null, null, null, self.#parentElement);
             try {

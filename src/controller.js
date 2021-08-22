@@ -1,7 +1,7 @@
 import * as model from "./model.js";
 import productsView from "./productsView.js";
 import addProductView from "./addProductView.js";
-//import updateProductView from "./editProductView.js";
+import updateProductView from "./editProductView.js";
 
 async function controlProducts() {
     await model.fetchProducts();
@@ -10,16 +10,18 @@ async function controlProducts() {
 
 async function controlAddProduct(product) {
     await model.addProduct(product);
+    productsView.render(model.state.products);
 }
 
-function controlUpdateProduct(product) {
-  console.log(product);
+async function controlUpdateProduct(product) {
+  await model.updateProduct(product);
+  productsView.render(model.state.products);
 }
 
 function init() {
     productsView.addHandlerRender(controlProducts);
     addProductView.addHandlerSaveProduct(controlAddProduct);
-    //updateProductView.addHandlerUpdateProduct(controlUpdateProduct)
+    updateProductView.addHandlerUpdateProduct(controlUpdateProduct)
 };
 
 init();

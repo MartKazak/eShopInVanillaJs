@@ -1,5 +1,5 @@
 class ProductsView {
-    #parentElement = document.getElementById("products-container");
+    #parentElement = document.getElementById("products-container-placeholder");
     #products;
 
     render(products){
@@ -17,13 +17,21 @@ class ProductsView {
     }
 
     #generateMarkup() {
+        const productCardTemplate = document.getElementById("product-card-template");
+        const productsContainer = document.createElement("div");
+        productsContainer.classList.add("items-container");
+
         this.#products.forEach(product => {
-            const productCardTemplate = document.getElementById("product-card-template").content.cloneNode(true);
-            productCardTemplate.querySelector(".card-title").innerText = product.title;
-            productCardTemplate.querySelector(".card-description").innerText = product.description;
-            productCardTemplate.querySelector(".card-price").innerText = product.price;
-            this.#parentElement.appendChild(productCardTemplate);
+            const productCard = document.importNode(productCardTemplate.content, true);
+            productCard.querySelector(".card-title").innerText = product.title;
+            productCard.querySelector(".card-description").innerText = product.description;
+            productCard.querySelector(".card-price").innerText = product.price;
+            productCard.querySelector(".card-id").innerText = product.id;
+
+            productsContainer.appendChild(productCard);
         });
+
+        this.#parentElement.replaceWith(productsContainer);
     }
 }
 

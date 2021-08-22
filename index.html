@@ -24,7 +24,7 @@
             <div>
                 <button id="btn-add-product" type="button">+ Add product</button>
             </div>
-            <div id="products-container" class="items-container"></div>
+            <div id="products-container-placeholder"></div>
             <div id="update-product-container"></div>
         </main>
         <footer>
@@ -36,6 +36,7 @@
         <div class="card">
             <div class="card-image"></div>
             <div class="card-body">
+                <div hidden class="card-id"></div>
                 <h5 class="card-title"></h5>
                 <p class="card-description"></p>
                 <p class="card-price"></p>
@@ -49,12 +50,13 @@
     <template id="add-product-template">
         <form id="add-product-form">
             <div>
+                <input id="product-id" name="id" type="hidden" value="">
                 <label>Price</label>
-                <input required  type="text" name="price" value="1000">
+                <input id="product-price" type="text" name="price" value="">
                 <label>Title</label>
-                <input required  type="text" name="title" value="title updated">
+                <input id="product-title" type="text" name="title" value="">
                 <label>Description</label>
-                <input required type="text" name="description" value="description updated">
+                <input id="product-description" type="text" name="description" value="">
             </div>
         </form>
     </template>

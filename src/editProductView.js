@@ -1,43 +1,49 @@
-// import Product from "./product";
-// import SimpleModal from "../modal";
+import Product from "./product";
+import SimpleModal from "../modal";
 
-// class UpdateProductView {
-//     #parentElement = document.getElementById("add-product-template").content.cloneNode(true).getElementById("add-product-form");
-//     #template = document.getElementById("product-card-template");
-//     //#btnOpenUpdateProductModal = document.getElementById("product-card-template").content.cloneNode(true).getElementById("btn-update-product");
+class UpdateProductView {
+    #parentElement = document.getElementById("add-product-template").content.cloneNode(true).getElementById("add-product-form");
 
-//     addHandlerUpdateProduct(handler) {
-//         const node = document.importNode(this.#template.content, true);
-//         const placeHolder = document.getElementById("update-product-container");
-//         placeHolder.replaceWith(node);
+    addHandlerUpdateProduct(handler) {
+        const self = this;
 
-//         const btn = document.getElementById("btn-update-product");
-//         //const self = this;
-//         // console.log(this.#btnOpenUpdateProductModal);
-//         console.log(btn);
-//         btn.addEventListener("click", function(e) {
-//             console.log("EDIT....", this);
-//             //e.preventDefault();
-//             // const addProductModal = new SimpleModal("Add product", null, null, null, self.#parentElement);
-//             // try {
-//             //     const modalResponse = await addProductModal.question();
+        document.addEventListener("click", async function(event) {
+            event.preventDefault();
 
-//             //     if (modalResponse) {
-//             //         const productPropertiesArray = [...new FormData(self.#parentElement)];
-//             //         const productObject = Object.fromEntries(productPropertiesArray);
-//             //         const product = new Product(null, productObject.title, productObject.description, productObject.price);
-//             //         handler(product);
-//             //     }
-//             // } catch(err) {
-//             //     console.log(err);
-//             // }
-//         });
-//     }
+            if (event.target && event.target.id == "btn-update-product") {
+                const productCard = event.target.closest(".card");
+                const id = productCard.querySelector(".card-id").innerText;
+                const title = productCard.querySelector(".card-title").innerText;
+                const price = productCard.querySelector(".card-price").innerText;
+                const description = productCard.querySelector(".card-description").innerText;
 
-//     //TODO: investigate if this one is still needed
-//     // #clear() {
-//     //     this.#parentElement.innerHTML = "";
-//     // }
-// }
+                self.#parentElement.querySelector("#product-id").value = id;
+                self.#parentElement.querySelector("#product-title").value = title;
+                self.#parentElement.querySelector("#product-description").value = description;
+                self.#parentElement.querySelector("#product-price").value = price;
 
-// export default new UpdateProductView();
+                const addProductModal = new SimpleModal("Add product", null, null, null, self.#parentElement);
+
+                try {
+                    const modalResponse = await addProductModal.question();
+
+                    if (modalResponse) {
+                        const productPropertiesArray = [...new FormData(self.#parentElement)];
+                        const productObject = Object.fromEntries(productPropertiesArray);
+                        const product = new Product(productObject.id, productObject.title, productObject.description, productObject.price);
+                        handler(product);
+                    }
+                } catch(err) {
+                    console.log(err);
+                }
+            }
+        });
+    }
+
+    //TODO: investigate if this one is still needed
+    // #clear() {
+    //     this.#parentElement.innerHTML = "";
+    // }
+}
+
+export default new UpdateProductView();
