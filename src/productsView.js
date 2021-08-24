@@ -31,7 +31,7 @@ class ProductsView {
             productsContainer.appendChild(productCard);
         });
 
-        this.#parentElement.replaceWith(productsContainer);
+        this.#parentElement.appendChild(productsContainer);
     }
 }
 
