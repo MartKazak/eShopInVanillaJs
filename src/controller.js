@@ -3,6 +3,7 @@ import productsView from "./productsView.js";
 import addProductView from "./addProductView.js";
 import updateProductView from "./editProductView.js";
 import deleteProductView from "./deleteProductView.js";
+import sliderView from "./sliderView.js";
 
 async function controlProducts() {
     await model.fetchProducts();
@@ -25,10 +26,11 @@ async function controlDeleteProduct(productId) {
 }
 
 function init() {
-    productsView.addHandlerRender(controlProducts);
-    addProductView.addHandlerSaveProduct(controlAddProduct);
-    updateProductView.addHandlerUpdateProduct(controlUpdateProduct);
-    deleteProductView.addHandlerDeleteProduct(controlDeleteProduct);
+    sliderView.addHandlerRender();
+    // productsView.addHandlerRender(controlProducts);
+    // addProductView.addHandlerSaveProduct(controlAddProduct);
+    // updateProductView.addHandlerUpdateProduct(controlUpdateProduct);
+    // deleteProductView.addHandlerDeleteProduct(controlDeleteProduct);
 };
 
 init();
