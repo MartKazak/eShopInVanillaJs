@@ -2,6 +2,7 @@ import * as model from "./model.js";
 import productsView from "./productsView.js";
 import addProductView from "./addProductView.js";
 import updateProductView from "./editProductView.js";
+import deleteProductView from "./deleteProductView.js";
 
 async function controlProducts() {
     await model.fetchProducts();
@@ -14,14 +15,20 @@ async function controlAddProduct(product) {
 }
 
 async function controlUpdateProduct(product) {
-  await model.updateProduct(product);
-  productsView.render(model.state.products);
+    await model.updateProduct(product);
+    productsView.render(model.state.products);
+}
+
+async function controlDeleteProduct(productId) {
+    await model.deleteProduct(productId);
+    productsView.render(model.state.products);
 }
 
 function init() {
     productsView.addHandlerRender(controlProducts);
     addProductView.addHandlerSaveProduct(controlAddProduct);
-    updateProductView.addHandlerUpdateProduct(controlUpdateProduct)
+    updateProductView.addHandlerUpdateProduct(controlUpdateProduct);
+    deleteProductView.addHandlerDeleteProduct(controlDeleteProduct);
 };
 
 init();

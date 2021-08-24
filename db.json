@@ -56,9 +56,9 @@
     },
     {
       "id": 10,
-      "title": "title",
-      "description": "productObject.description",
-      "price": "productObject.price"
+      "title": "TTTT",
+      "description": "DDD",
+      "price": "5555"
     },
     {
       "id": 11,
@@ -75,12 +75,6 @@
     {
       "id": 13,
       "title": "title",
-      "description": "productObject.description",
-      "price": "productObject.price"
-    },
-    {
-      "id": 14,
-      "title": "productObject.title",
       "description": "productObject.description",
       "price": "productObject.price"
     },
