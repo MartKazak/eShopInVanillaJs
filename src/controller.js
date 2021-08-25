@@ -26,11 +26,12 @@ async function controlDeleteProduct(productId) {
 }
 
 function init() {
-    sliderView.addHandlerRender();
-    // productsView.addHandlerRender(controlProducts);
-    // addProductView.addHandlerSaveProduct(controlAddProduct);
-    // updateProductView.addHandlerUpdateProduct(controlUpdateProduct);
-    // deleteProductView.addHandlerDeleteProduct(controlDeleteProduct);
+    //sliderView.addHandlerRender();
+    sliderView.slider();
+    productsView.addHandlerRender(controlProducts);
+    addProductView.addHandlerSaveProduct(controlAddProduct);
+    updateProductView.addHandlerUpdateProduct(controlUpdateProduct);
+    deleteProductView.addHandlerDeleteProduct(controlDeleteProduct);
 };
 
 init();
