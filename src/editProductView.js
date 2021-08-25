@@ -16,11 +16,13 @@ class UpdateProductView {
                 const title = productCard.querySelector(".card-title").innerText;
                 const price = productCard.querySelector(".card-price").innerText;
                 const description = productCard.querySelector(".card-description").innerText;
+                const imgUrl = productCard.querySelector(".card-image").firstElementChild.src;
 
                 self.#parentElement.querySelector("#product-id").value = id;
                 self.#parentElement.querySelector("#product-title").value = title;
                 self.#parentElement.querySelector("#product-description").value = description;
                 self.#parentElement.querySelector("#product-price").value = price;
+                self.#parentElement.querySelector("#product-img-url").value = imgUrl;
 
                 const addProductModal = new SimpleModal("Add product", null, null, null, self.#parentElement);
 
@@ -30,7 +32,7 @@ class UpdateProductView {
                     if (modalResponse) {
                         const productPropertiesArray = [...new FormData(self.#parentElement)];
                         const productObject = Object.fromEntries(productPropertiesArray);
-                        const product = new Product(productObject.id, productObject.title, productObject.description, productObject.price);
+                        const product = new Product(productObject.id, productObject.title, productObject.description, productObject.price, productObject.imgUrl);
                         handler(product);
                     }
                 } catch(err) {

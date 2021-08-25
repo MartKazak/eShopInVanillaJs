@@ -7,7 +7,7 @@ export const state = {
 
 export async function fetchProducts() {
     const results = await get(`${API_URL}/products`);
-    const products = results.map(r => new Product(r.id, r.title, r.description, r.price));
+    const products = results.map(r => new Product(r.id, r.title, r.description, r.price, r.imgUrl));
     state.products = products;
 };
 

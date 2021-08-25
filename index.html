@@ -63,7 +63,9 @@
     <!-- TODO: try to move into separate file and import -->
     <template id="product-card-template">
         <div class="card">
-            <div class="card-image"></div>
+            <div class="card-image">
+                <img alt="">
+            </div>
             <div class="card-body">
                 <div hidden class="card-id"></div>
                 <h5 class="card-title"></h5>
@@ -86,6 +88,8 @@
                 <input id="product-title" type="text" name="title" value="">
                 <label>Description</label>
                 <input id="product-description" type="text" name="description" value="">
+                <label>Image url</label>
+                <input id="product-img-url" type="text" name="imgUrl" value="">
             </div>
         </form>
     </template>

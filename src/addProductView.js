@@ -16,7 +16,7 @@ class AddProductView {
                 if (modalResponse) {
                     const productPropertiesArray = [...new FormData(self.#parentElement)];
                     const productObject = Object.fromEntries(productPropertiesArray);
-                    const product = new Product(null, productObject.title, productObject.description, productObject.price);
+                    const product = new Product(null, productObject.title, productObject.description, productObject.price, productObject.imgUrl);
                     handler(product);
                 }
             } catch(err) {
