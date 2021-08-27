@@ -1,9 +1,9 @@
 import * as model from "./model.js";
-import productsView from "./productsView.js";
-import addProductView from "./addProductView.js";
-import updateProductView from "./editProductView.js";
-import deleteProductView from "./deleteProductView.js";
-import sliderView from "./sliderView.js";
+import productsView from "./views/productsView.js";
+import addProductView from "./views/addProductView.js";
+import updateProductView from "./views/editProductView.js";
+import deleteProductView from "./views/deleteProductView.js";
+import sliderView from "./views/sliderView.js";
 
 async function controlProducts() {
     await model.fetchProducts();

@@ -1,4 +1,4 @@
-import SimpleModal from "../modal";
+import SimpleModal from "../../modal";
 
 class DeleteProductView {
     #parentElement = document.getElementById("delete-product-template").content.cloneNode(true).getElementById("product-delete-confimation");
