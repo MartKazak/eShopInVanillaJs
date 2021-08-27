@@ -27,7 +27,7 @@ class ProductsView {
             productCard.querySelector(".card-description").innerText = product.description;
             productCard.querySelector(".card-price").innerText = product.price;
             productCard.querySelector(".card-id").innerText = product.id;
-            productCard.querySelector(".card-image").firstElementChild.src = product.imgUrl; //TODO: fix local host issue
+            productCard.querySelector(".card-image").firstElementChild.src = product.imgUrl;
             productsContainer.appendChild(productCard);
         });
 

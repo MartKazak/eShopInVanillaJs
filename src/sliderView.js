@@ -1,4 +1,23 @@
 class SliderView {
+    #parentElement = document.querySelector("#products-slider");
+    #products = [];
+
+    render(products){
+        this.#products = products;
+        this.#generateMarkup();
+    }
+
+    #generateMarkup() {
+        const products = this.#products.filter(p => p.showInSlider).reverse();
+
+        products.forEach(p => {
+            const imgElement =  `<img src="${p.imgUrl}" alt=""></div>`;
+            const slide = document.createElement("div");
+            slide.classList.add("slide");
+            slide.insertAdjacentHTML('beforeend', imgElement);
+            this.#parentElement.prepend(slide);
+        });
+    }
 
     slider() {
         const slides = document.querySelectorAll('.slide');
@@ -20,13 +39,11 @@ class SliderView {
         };
 
         const activateDot = function (slide) {
-          document
-            .querySelectorAll('.dots__dot')
-            .forEach(dot => dot.classList.remove('dots__dot--active'));
+            document.querySelectorAll('.dots__dot')
+                .forEach(dot => dot.classList.remove('dots__dot--active'));
 
-          document
-            .querySelector(`.dots__dot[data-slide="${slide}"]`)
-            .classList.add('dots__dot--active');
+            document.querySelector(`.dots__dot[data-slide="${slide}"]`)
+                .classList.add('dots__dot--active');
         };
 
         const goToSlide = function (slide) {

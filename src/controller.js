@@ -8,6 +8,8 @@ import sliderView from "./sliderView.js";
 async function controlProducts() {
     await model.fetchProducts();
     productsView.render(model.state.products);
+    sliderView.render(model.state.products);
+    sliderView.slider();
 }
 
 async function controlAddProduct(product) {
@@ -26,8 +28,6 @@ async function controlDeleteProduct(productId) {
 }
 
 function init() {
-    //sliderView.addHandlerRender();
-    sliderView.slider();
     productsView.addHandlerRender(controlProducts);
     addProductView.addHandlerSaveProduct(controlAddProduct);
     updateProductView.addHandlerUpdateProduct(controlUpdateProduct);

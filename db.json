@@ -5,14 +5,16 @@
       "title": "Product 1",
       "description": "description updated",
       "price": "100",
-      "imgUrl": "https://images.pexels.com/photos/2138922/pexels-photo-2138922.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+      "imgUrl": "https://images.pexels.com/photos/2138922/pexels-photo-2138922.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "showInSlider": true
     },
     {
       "id": 2,
       "title": "Product 2",
       "description": "Product 2 description",
       "price": "200",
-      "imgUrl": "https://images.pexels.com/photos/2649403/pexels-photo-2649403.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+      "imgUrl": "https://images.pexels.com/photos/2649403/pexels-photo-2649403.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "showInSlider": true
     },
     {
       "id": 3,
