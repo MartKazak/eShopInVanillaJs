@@ -28,8 +28,8 @@ export default class Slider {
     }
 
     #renderSlidesMarkup() {
-        const btnLeftHtml = `<button class="slider__btn slider__btn--left">&larr;</button>`;
-        const btnRightHtml = `<button class="slider__btn slider__btn--right">&rarr;</button>`;
+        const btnLeftHtml = `<button class="slider-btn slider-btn-left">&larr;</button>`;
+        const btnRightHtml = `<button class="slider-btn slider-btn-right">&rarr;</button>`;
         const dotsHtml = `<div class="dots"></div>`;
 
         this.#sliderContainer.insertAdjacentHTML("beforeend", btnLeftHtml);
@@ -42,25 +42,25 @@ export default class Slider {
 
         this.#slides = this.#sliderContainer.querySelectorAll(".slide");
         this.#slidesAmount = this.#slides.length;
-        this.#btnLeft = this.#sliderContainer.querySelector(".slider__btn--left");
-        this.#btnRight = this.#sliderContainer.querySelector(".slider__btn--right");
+        this.#btnLeft = this.#sliderContainer.querySelector(".slider-btn-left");
+        this.#btnRight = this.#sliderContainer.querySelector(".slider-btn-right");
         this.#dotContainer = this.#sliderContainer.querySelector(".dots");
     }
 
     #createDots() {
         this.#slides.forEach((slide, i) => {
-            const dotHtml = `<button class="dots__dot" data-slide="${i}"></button>`;
+            const dotHtml = `<button class="dots-dot" data-slide="${i}"></button>`;
             this.#dotContainer.insertAdjacentHTML("beforeend", dotHtml);
             this.#addSlideClickHandler(slide); //TODO: this one is hidden here, move to other place
         });
     }
 
     #activateDot(slide) {
-        this.#sliderContainer.querySelectorAll(".dots__dot")
-            .forEach(dot => dot.classList.remove("dots__dot--active"));
+        this.#sliderContainer.querySelectorAll(".dots-dot")
+            .forEach(dot => dot.classList.remove("dots-dot-active"));
 
-        this.#sliderContainer.querySelector(`.dots__dot[data-slide="${slide}"]`)
-            .classList.add("dots__dot--active");
+        this.#sliderContainer.querySelector(`.dots-dot[data-slide="${slide}"]`)
+            .classList.add("dots-dot-active");
     }
 
     #goToSlide(slide) {
@@ -105,7 +105,7 @@ export default class Slider {
 
     #addDotsHandler() {
         this.#dotContainer.addEventListener("click", e => {
-            if (e.target.classList.contains("dots__dot")) {
+            if (e.target.classList.contains("dots-dot")) {
                 const slide = e.target.dataset.slide;
                 this.#goToSlide(slide);
                 this.#activateDot(slide);
