@@ -1,5 +1,5 @@
-import Slider from "../components/slider.js";
-import ImageSlide from "../components/slide.js";
+import Slider from "../components/slider/slider.js";
+import ImageSlide from "../components/imageSlide.js";
 
 class ProductsView {
     #parentElement = document.getElementById("products-container-placeholder");

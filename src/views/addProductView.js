@@ -1,5 +1,5 @@
 import Product from "../product.js";
-import SimpleModal from "../components/modal.js";
+import SimpleModal from "../components/modal/modal.js";
 
 class AddProductView {
     #parentElement = document.getElementById("add-product-template").content.cloneNode(true).getElementById("add-product-form");

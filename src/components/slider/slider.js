@@ -1,3 +1,5 @@
+import "./slider.css";
+
 export default class Slider {
     #sliderContainer;
     #btnLeft;

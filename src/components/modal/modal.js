@@ -1,4 +1,5 @@
 //https://github.com/anderpos/simple-dialog
+import "./modal.css"
 
 export default class SimpleModal {
     constructor(modalTitle, modalText, acceptText, cancelText, modalBodyTemplate = null) {

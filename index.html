@@ -51,18 +51,20 @@
         </div>
     </template>
     <template id="add-product-template">
-        <form id="add-product-form">
-            <div>
-                <input id="product-id" name="id" type="hidden" value="">
-                <label>Price</label>
-                <input id="product-price" type="text" name="price" value="">
-                <label>Title</label>
-                <input id="product-title" type="text" name="title" value="">
-                <label>Description</label>
-                <input id="product-description" type="text" name="description" value="">
-                <label>Image url</label>
-                <input id="product-img-url" type="text" name="imgUrl" value="">
-            </div>
+        <form id="add-product-form" class="product-form">
+            <input id="product-id" name="id" type="hidden" value="">
+
+            <label>Price</label>
+            <input id="product-price" type="text" name="price" value="">
+
+            <label>Title</label>
+            <input id="product-title" type="text" name="title" value="">
+
+            <label>Description</label>
+            <textarea id="product-description" type="text" name="description" value=""></textarea>
+
+            <label>Image url</label>
+            <input id="product-img-url" type="text" name="imgUrl" value="">
         </form>
     </template>
     <template id="delete-product-template">

@@ -1,6 +1,4 @@
 @import "reset.css";
-@import "slider.css";
-@import "modal.css";
 
 header {
     background: #8ab65e;
@@ -78,4 +76,22 @@ footer {
     align-items: center;
     height: 100%;
     background: #8ab65e;
+}
+
+.product-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem;
+
+    margin: 1rem;
+}
+
+.product-form label {
+    text-align: right;
+    grid-column: 1;
+}
+
+.product-form input,
+.product-form textarea {
+    grid-column: 2;
 }
