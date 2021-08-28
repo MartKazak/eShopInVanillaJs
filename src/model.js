@@ -1,4 +1,5 @@
-import { API_URL, get, post, put, xdelete } from "../http-helper.js";
+import httpClient from "./infrastructure/httpClient.js";
+import { API_URL } from "./infrastructure/config.js";
 import Product from "./product.js";
 
 export const state = {
@@ -6,14 +7,14 @@ export const state = {
 };
 
 export async function fetchProducts() {
-    const results = await get(`${API_URL}/products`);
+    const results = await httpClient.get(API_URL);
     const products = results.map(r => new Product(r.id, r.title, r.description, r.price, r.imgUrl, r.showInSlider));
     state.products = products;
 };
 
 export async function addProduct(product) {
     try {
-        await post(`${API_URL}/products`, product);
+        await httpClient.post(API_URL, product);
         addProductInState(product);
     } catch (error) {
         console.error(error);
@@ -22,7 +23,7 @@ export async function addProduct(product) {
 
 export async function updateProduct(product) {
     try {
-        await put(`${API_URL}/products/${product.id}`, product);
+        await httpClient.put(`${API_URL}${product.id}`, product);
         updateProductInState(product);
     } catch (error) {
         console.error(error);
@@ -31,7 +32,7 @@ export async function updateProduct(product) {
 
 export async function deleteProduct(productId) {
     try {
-        await xdelete(`${API_URL}/products/${productId}`);
+        await httpClient.xdelete(`${API_URL}${productId}`);
         deleteProductFromState(productId);
     } catch (error) {
         console.error(error);
