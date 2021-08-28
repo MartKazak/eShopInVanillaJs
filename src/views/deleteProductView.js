@@ -28,11 +28,6 @@ class DeleteProductView {
             }
         });
     }
-
-    //TODO: investigate if this one is still needed
-    // #clear() {
-    //     this.#parentElement.innerHTML = "";
-    // }
 }
 
 export default new DeleteProductView();
