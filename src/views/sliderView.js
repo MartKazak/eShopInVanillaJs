@@ -14,10 +14,10 @@ class SliderView {
         const products = this.#products.filter(p => p.showInSlider).reverse();
 
         products.forEach(p => {
-            const imgElement =  `<img src="${p.imgUrl}" alt=""></div>`;
+            const imageHtml =  `<img src="${p.imgUrl}" alt=""></div>`;
             const slide = document.createElement("div");
             slide.classList.add("slide");
-            slide.insertAdjacentHTML('beforeend', imgElement);
+            slide.insertAdjacentHTML('beforeend', imageHtml);
             this.#parentElement.prepend(slide);
         });
     }

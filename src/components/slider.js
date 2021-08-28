@@ -1,18 +1,13 @@
 export default class Slider {
-    // #currentSlide;
-    // #slidesAmount;
-
-
     #slides = document.querySelectorAll('.slide');
     #btnLeft = document.querySelector('.slider__btn--left');
     #btnRight = document.querySelector('.slider__btn--right');
     #dotContainer = document.querySelector('.dots');
+
     #currentSlide = 0;
     #slidesAmount = this.#slides.length;
-    constructor() {
-        this.#currentSlide = 0;
-        this.#slidesAmount = this.#slides.length;
 
+    constructor() {
         this.#goToSlide(0);
         this.#createDots();
         this.#activateDot(0);
@@ -23,12 +18,9 @@ export default class Slider {
     }
 
     #createDots() {
-        const self = this;
-        this.#slides.forEach(function (_, i) {
-            self.#dotContainer.insertAdjacentHTML(
-                'beforeend',
-                `<button class="dots__dot" data-slide="${i}"></button>`
-            );
+        this.#slides.forEach((_, i) => {
+            const dotHtml = `<button class="dots__dot" data-slide="${i}"></button>`;
+            this.#dotContainer.insertAdjacentHTML('beforeend', dotHtml);
         });
     }
 
@@ -68,19 +60,19 @@ export default class Slider {
     }
 
     #addButtonsHandlers() {
-        this.#btnRight.addEventListener('click', this.#nextSlide);
-        this.#btnLeft.addEventListener('click', this.#previousSlide);
+        this.#btnRight.addEventListener('click', _ => this.#nextSlide());
+        this.#btnLeft.addEventListener('click', _ => this.#previousSlide());
     }
 
     #addKeyboardHandler() {
-        document.addEventListener('keydown', function (e) {
+        document.addEventListener('keydown', e => {
             e.key === 'ArrowLeft' && this.#previousSlide();
             e.key === 'ArrowRight' && this.#nextSlide();
         });
     }
 
     #addDotsHandler() {
-        this.#dotContainer.addEventListener('click', function (e) {
+        this.#dotContainer.addEventListener('click', e => {
             if (e.target.classList.contains('dots__dot')) {
                 const slide = e.target.dataset.slide;
                 this.#goToSlide(slide);
