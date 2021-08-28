@@ -1,3 +1,5 @@
+import { Slider, ImageSlide } from "../components/slider.js";
+
 class ProductsView {
     #parentElement = document.getElementById("products-container-placeholder");
     #products;
@@ -6,6 +8,7 @@ class ProductsView {
         this.#products = products;
         this.#clear();
         this.#generateMarkup();
+        this.#generateSlider();
     }
 
     addHandlerRender(handler) {
@@ -32,6 +35,14 @@ class ProductsView {
         });
 
         this.#parentElement.appendChild(productsContainer);
+    }
+
+    #generateSlider() {
+        const slides = this.#products.filter(p => p.showInSlider)
+            .map(p => new ImageSlide(p.title, p.imgUrl))
+            .reverse();
+
+        new Slider("products-slider-container", slides);
     }
 }
 

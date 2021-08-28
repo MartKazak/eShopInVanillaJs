@@ -1,13 +1,20 @@
-export default class Slider {
-    #slides = document.querySelectorAll('.slide');
-    #btnLeft = document.querySelector('.slider__btn--left');
-    #btnRight = document.querySelector('.slider__btn--right');
-    #dotContainer = document.querySelector('.dots');
+import DEFAULT_IMG_URL from "../infrastructure/config.js";
 
+export class Slider {
+    #sliderContainer;
+    #btnLeft;
+    #btnRight;
+    #dotContainer;
+    #slides;
     #currentSlide = 0;
-    #slidesAmount = this.#slides.length;
+    #slidesAmount = 0;
+    #slidesContent = [];
 
-    constructor() {
+    constructor(sliderContainerId, slidesContent) {
+        this.#sliderContainer = document.getElementById(sliderContainerId);
+        this.#slidesContent = slidesContent;
+
+        this.#renderSlidesMarkup();
         this.#goToSlide(0);
         this.#createDots();
         this.#activateDot(0);
@@ -17,19 +24,32 @@ export default class Slider {
         this.#addDotsHandler();
     }
 
+    #renderSlidesMarkup() {
+        this.#slidesContent.forEach(slide => {
+            this.#sliderContainer.prepend(slide.markup);
+        });
+
+        this.#slides = this.#sliderContainer.querySelectorAll(".slide");
+        this.#slidesAmount = this.#slides.length;
+        this.#btnLeft = this.#sliderContainer.querySelector(".slider__btn--left");
+        this.#btnRight = this.#sliderContainer.querySelector(".slider__btn--right");
+        this.#dotContainer = this.#sliderContainer.querySelector(".dots");
+    }
+
     #createDots() {
-        this.#slides.forEach((_, i) => {
+        this.#slides.forEach((slide, i) => {
             const dotHtml = `<button class="dots__dot" data-slide="${i}"></button>`;
-            this.#dotContainer.insertAdjacentHTML('beforeend', dotHtml);
+            this.#dotContainer.insertAdjacentHTML("beforeend", dotHtml);
+            this.#addSlideClickHandler(slide); //TODO: this one is hidden here, move to other place
         });
     }
 
     #activateDot(slide) {
-        document.querySelectorAll('.dots__dot')
-            .forEach(dot => dot.classList.remove('dots__dot--active'));
+        this.#sliderContainer.querySelectorAll(".dots__dot")
+            .forEach(dot => dot.classList.remove("dots__dot--active"));
 
-        document.querySelector(`.dots__dot[data-slide="${slide}"]`)
-            .classList.add('dots__dot--active');
+        this.#sliderContainer.querySelector(`.dots__dot[data-slide="${slide}"]`)
+            .classList.add("dots__dot--active");
     }
 
     #goToSlide(slide) {
@@ -55,29 +75,56 @@ export default class Slider {
         } else {
             this.#currentSlide--;
         }
+
         this.#goToSlide(this.#currentSlide);
         this.#activateDot(this.#currentSlide);
     }
 
     #addButtonsHandlers() {
-        this.#btnRight.addEventListener('click', _ => this.#nextSlide());
-        this.#btnLeft.addEventListener('click', _ => this.#previousSlide());
+        this.#btnRight.addEventListener("click", _ => this.#nextSlide());
+        this.#btnLeft.addEventListener("click", _ => this.#previousSlide());
     }
 
     #addKeyboardHandler() {
-        document.addEventListener('keydown', e => {
-            e.key === 'ArrowLeft' && this.#previousSlide();
-            e.key === 'ArrowRight' && this.#nextSlide();
+        this.#sliderContainer.addEventListener("keydown", e => {
+            e.key === "ArrowLeft" && this.#previousSlide();
+            e.key === "ArrowRight" && this.#nextSlide();
         });
     }
 
     #addDotsHandler() {
-        this.#dotContainer.addEventListener('click', e => {
-            if (e.target.classList.contains('dots__dot')) {
+        this.#dotContainer.addEventListener("click", e => {
+            if (e.target.classList.contains("dots__dot")) {
                 const slide = e.target.dataset.slide;
                 this.#goToSlide(slide);
                 this.#activateDot(slide);
             }
         });
+    }
+
+    #addSlideClickHandler(slide) {
+        slide.addEventListener("click", e => window.location.href = "http://stackoverflow.com")
+    }
+}
+
+//TODO: move to types ???
+export class ImageSlide {
+    #imageUrl = DEFAULT_IMG_URL;
+    #title = "";
+
+    constructor(title, imageUrl) {
+        this.#title = title;
+        this.#imageUrl = imageUrl;
+
+        this.markup = this.#generateMarkup();
+    }
+
+    #generateMarkup() {
+        const imageHtml = `<img src="${this.#imageUrl}" alt=""><div class="slide-title"><p>${this.#title}</p></div>`;
+        const slideHtml = document.createElement("div");
+        slideHtml.classList.add("slide");
+        slideHtml.insertAdjacentHTML('beforeend', imageHtml);
+
+        return slideHtml;
     }
 }
