@@ -6,15 +6,14 @@ class AddProductView {
     #btnOpenAddProductModal = document.getElementById("btn-add-product");
 
     addHandlerSaveProduct(handler) {
-        const self = this;
-        this.#btnOpenAddProductModal.addEventListener("click", async function(e) {
+        this.#btnOpenAddProductModal.addEventListener("click", async e => {
             e.preventDefault();
-            const addProductModal = new SimpleModal("Add product", null, null, null, self.#parentElement);
+            const addProductModal = new SimpleModal("Add product", null, null, null, this.#parentElement);
             try {
                 const modalResponse = await addProductModal.question();
 
                 if (modalResponse) {
-                    const productPropertiesArray = [...new FormData(self.#parentElement)];
+                    const productPropertiesArray = [...new FormData(this.#parentElement)];
                     const productObject = Object.fromEntries(productPropertiesArray);
                     const product = new Product(null, productObject.title, productObject.description, productObject.price, productObject.imgUrl);
                     handler(product);
