@@ -29,7 +29,8 @@
       "title": "Product 4",
       "description": "Product 4 description",
       "price": "400",
-      "imgUrl": ""
+      "imgUrl": "",
+      "showInSlider": true
     },
     {
       "id": 5,

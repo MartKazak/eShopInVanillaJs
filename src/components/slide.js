@@ -1,12 +1,12 @@
-import DEFAULT_IMG_URL from "../infrastructure/config.js";
+import { DEFAULT_IMG_URL } from "../infrastructure/config.js";
 
 export default class ImageSlide {
-    #imageUrl = DEFAULT_IMG_URL;
-    #title = "";
+    #imageUrl;
+    #title;
 
     constructor(title, imageUrl) {
-        this.#title = title;
-        this.#imageUrl = imageUrl;
+        this.#title = title || "";
+        this.#imageUrl = imageUrl || DEFAULT_IMG_URL;
 
         this.markup = this.#generateMarkup();
     }
