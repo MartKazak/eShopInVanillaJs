@@ -1,5 +1,9 @@
 @import "reset.css";
 
+body {
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
 header {
     background: #8ab65e;
     display: flex;
@@ -54,14 +58,19 @@ main {
 
 .card {
     width: 18rem;
-    background: #9fb8e7;
-    /* margin: 20px 20px; */
+    /* background: #9fb8e7; */
+    background-color: #E6E9ED;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 40%);
+
 }
 
 .card-image > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .card-body {
@@ -84,6 +93,7 @@ footer {
     grid-gap: 1rem;
 
     margin: 1rem;
+    width: 80%;
 }
 
 .product-form label {
@@ -94,4 +104,67 @@ footer {
 .product-form input,
 .product-form textarea {
     grid-column: 2;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-control {
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.form-control:focus {
+    border: 1px solid #4FC1E9 !important;
+    outline: none;
+}
+
+.btn {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    margin-right: 0.6rem;
+}
+
+.btn-default {
+    color: #434a54;
+    background-color: #F5F7FA;
+    border-color: #AAB2BD;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+    color: #F5F7FA;
+    background-color: #CCD1D9;
+    border-color: #AAB2BD;
+}
+
+.btn-primary {
+    background-color: #3BAFDA;
+    border-color: #3BAFDA;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #4FC1E9;
+    border-color: #4FC1E9;
+}
+
+.btn-danger {
+    color: #F5F7FA;
+    background-color: #DA4453;
+    border-color: #DA4453;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+    color: #F5F7FA;
+    background-color: #ED5565;
+    border-color: #ED5565;
 }

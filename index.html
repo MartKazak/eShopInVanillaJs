@@ -23,7 +23,7 @@
             <h1>Eshop</h1>
             <div id="products-slider-container" class="slider"></div>
             <div>
-                <button id="btn-add-product" type="button">+ Add product</button>
+                <button id="btn-add-product" class="btn btn-default" type="button">+ Add product</button>
             </div>
             <div id="products-container-placeholder"></div>
             <div id="update-product-container"></div>
@@ -45,8 +45,8 @@
                 <p class="card-price"></p>
             </div>
             <div class="card-footer">
-                <button id="btn-update-product" type="button">Edit</button>
-                <button id="btn-delete-product" type="button">Delete</button>
+                <button id="btn-update-product" class="btn btn-primary" type="button">Edit</button>
+                <button id="btn-delete-product" class="btn btn-danger" type="button">Delete</button>
             </div>
         </div>
     </template>
@@ -55,16 +55,16 @@
             <input id="product-id" name="id" type="hidden" value="">
 
             <label>Price</label>
-            <input id="product-price" type="text" name="price" value="">
+            <input id="product-price" class="form-control" type="text" name="price" value="">
 
             <label>Title</label>
-            <input id="product-title" type="text" name="title" value="">
+            <input id="product-title" class="form-control" type="text" name="title" value="">
 
             <label>Description</label>
-            <textarea id="product-description" type="text" name="description" value=""></textarea>
+            <textarea id="product-description" class="form-control" type="text" rows="4" name="description" value=""></textarea>
 
             <label>Image url</label>
-            <input id="product-img-url" type="text" name="imgUrl" value="">
+            <input id="product-img-url" class="form-control" type="text" name="imgUrl" value="">
         </form>
     </template>
     <template id="delete-product-template">

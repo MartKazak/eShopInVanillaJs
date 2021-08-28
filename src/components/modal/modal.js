@@ -69,8 +69,8 @@ export default class SimpleModal {
         title.appendChild(titleText);
 
         // Close
-        this.closeButton = document.createElement('button');
-        this.closeButton.type = "button";
+        this.closeButton = document.createElement('span');
+        // this.closeButton.type = "button";
         this.closeButton.innerHTML = "&times;";
         this.closeButton.classList.add('simple-modal-close');
         title.appendChild(this.closeButton);
@@ -90,14 +90,16 @@ export default class SimpleModal {
         // Accept button
         this.acceptButton = document.createElement('button');
         this.acceptButton.type = "button";
-        this.acceptButton.classList.add('simple-modal-button-green');
+        this.acceptButton.classList.add('btn');
+        this.acceptButton.classList.add('btn-primary');
         this.acceptButton.textContent = this.acceptText;
         buttonGroup.appendChild(this.acceptButton);
 
         // Cancel button
         this.cancelButton = document.createElement('button');
         this.cancelButton.type = "button";
-        this.cancelButton.classList.add('simple-modal-button-red');
+        this.cancelButton.classList.add('btn');
+        this.cancelButton.classList.add('btn-default');
         this.cancelButton.textContent = this.cancelText;
         buttonGroup.appendChild(this.cancelButton);
 

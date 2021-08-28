@@ -29,18 +29,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .simple-modal-window {
     background-color: #fff;
     min-width: 320px;
     min-height: 170px;
-
+    width: 45%;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     animation: fadein .5s ease-in-out;
+    border-radius: 4px;
 }
 
 @keyframes fadein {
@@ -49,12 +51,14 @@
 }
 
 .simple-modal-title {
-    font-weight: bold;
-    background: #8ab65e;
     width: 100%;
-    color: #fff;
     text-align: center;
     padding: 7px 0;
+    color: #fff;
+    background-color: #8cc152;
+    border-color: #8cc152;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 .simple-modal-title-text {
@@ -69,6 +73,7 @@
     line-height: 18px;
     color: #fff;
     width: 30px;
+    cursor: pointer;
 }
 
 .simple-modal-text {
@@ -79,14 +84,14 @@
     margin: auto 0 10px 0;
 }
 
-.simple-modal-button-group button {
+/* .simple-modal-button-group button {
     border-radius: 5px;
     min-width: 100px;
     font-weight: bold;
     color: #fff;
     padding: 7px;
     margin: 0 10px;
-}
+} */
 
 .simple-modal-button-green {
     background-color: #81b214;
