@@ -14,6 +14,7 @@ export class Slider {
         this.#sliderContainer = document.getElementById(sliderContainerId);
         this.#slidesContent = slidesContent;
 
+        this.#clear();
         this.#renderSlidesMarkup();
         this.#goToSlide(0);
         this.#createDots();
@@ -24,7 +25,19 @@ export class Slider {
         this.#addDotsHandler();
     }
 
+    #clear() {
+        this.#sliderContainer.innerHTML = "";
+    }
+
     #renderSlidesMarkup() {
+        const btnLeftHtml = `<button class="slider__btn slider__btn--left">&larr;</button>`;
+        const btnRightHtml = `<button class="slider__btn slider__btn--right">&rarr;</button>`;
+        const dotsHtml = `<div class="dots"></div>`;
+
+        this.#sliderContainer.insertAdjacentHTML("beforeend", btnLeftHtml);
+        this.#sliderContainer.insertAdjacentHTML("beforeend", btnRightHtml);
+        this.#sliderContainer.insertAdjacentHTML("beforeend", dotsHtml);
+
         this.#slidesContent.forEach(slide => {
             this.#sliderContainer.prepend(slide.markup);
         });
@@ -107,7 +120,6 @@ export class Slider {
     }
 }
 
-//TODO: move to types ???
 export class ImageSlide {
     #imageUrl = DEFAULT_IMG_URL;
     #title = "";
