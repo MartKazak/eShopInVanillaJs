@@ -76,11 +76,11 @@ export default class SimpleModal {
         title.appendChild(this.closeButton);
 
         // Main text
-        //const text = document.createElement('span');
-        //text.classList.add('simple-modal-text');
-        //text.textContent = this.modalText;
-        //const productCardTemplate = document.getElementById("add-product-template").content.cloneNode(true);
-        window.appendChild(this.modalBodyTemplate);
+        const content = document.createElement('div');
+        content.classList.add('simple-modal-content');
+        content.appendChild(this.modalBodyTemplate);
+        window.appendChild(content);
+
 
         // Accept and cancel button group
         const buttonGroup = document.createElement('div');

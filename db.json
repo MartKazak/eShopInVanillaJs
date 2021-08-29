@@ -2,11 +2,11 @@
   "products": [
     {
       "id": 1,
-      "title": "Product 1",
+      "title": "Product 1456",
       "description": "description updated",
       "price": "10012",
       "imgUrl": "https://images.pexels.com/photos/2138922/pexels-photo-2138922.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "showInSlider": false
+      "showInSlider": true
     },
     {
       "id": 2,
@@ -162,6 +162,30 @@
       "title": "Product 1",
       "description": "Random product description",
       "price": "3007",
+      "imgUrl": "https://images.pexels.com/photos/421759/pexels-photo-421759.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "showInSlider": false
+    },
+    {
+      "id": 24,
+      "title": "title updated dfhfdhfdhfdh",
+      "description": "sddsgfsd",
+      "price": "777",
+      "imgUrl": "https://images.pexels.com/photos/2649403/pexels-photo-2649403.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "showInSlider": true
+    },
+    {
+      "id": 25,
+      "title": "sdf",
+      "description": "",
+      "price": "777",
+      "imgUrl": "https://images.pexels.com/photos/421759/pexels-photo-421759.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "showInSlider": false
+    },
+    {
+      "id": 26,
+      "title": "",
+      "description": "yteueytu",
+      "price": "789",
       "imgUrl": "https://images.pexels.com/photos/421759/pexels-photo-421759.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
       "showInSlider": false
     }

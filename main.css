@@ -11,7 +11,8 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
-    position: sticky; top: 0;
+    position: sticky;
+    top: 0;
     /* hack to overlay slider and slider arrows which has z-index as 20 */
     z-index: 21;
 }
@@ -175,4 +176,8 @@ label {
     color: #F5F7FA;
     background-color: #ED5565;
     border-color: #ED5565;
+}
+
+#product-delete-confimation {
+    padding-top: 1rem;
 }

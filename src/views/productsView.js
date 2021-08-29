@@ -27,10 +27,11 @@ class ProductsView {
 
         this.#products.forEach(product => {
             const productCard = document.importNode(productCardTemplate.content, true);
+            productCard.querySelector(".card-id").innerText = product.id;
+            productCard.querySelector(".card-show-in-slider").innerText = product.showInSlider;
             productCard.querySelector(".card-title").innerText = product.title;
             productCard.querySelector(".card-description").innerText = product.description;
             productCard.querySelector(".card-price").innerText = product.price;
-            productCard.querySelector(".card-id").innerText = product.id;
             productCard.querySelector(".card-image").firstElementChild.src = product.imgUrl;
             productsContainer.appendChild(productCard);
         });

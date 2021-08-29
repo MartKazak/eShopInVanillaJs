@@ -1,7 +1,7 @@
 import { DEFAULT_IMG_URL } from "./infrastructure/config.js";
 
 export default class Product {
-    constructor(id, title, description, price, imgUrl, showInSlider = false) {
+    constructor(id, title, description, price, imgUrl, showInSlider) {
         this.id = id;
         this.title = title;
         this.description = description;

@@ -39,6 +39,7 @@
             </div>
             <div class="card-body">
                 <div hidden class="card-id"></div>
+                <div hidden class="card-show-in-slider"></div>
                 <h5 class="card-title"></h5>
                 <p class="card-description"></p>
                 <p class="card-price"></p>
@@ -52,6 +53,7 @@
     <template id="add-product-template">
         <form id="add-product-form" class="product-form">
             <input id="product-id" name="id" type="hidden" value="">
+            <input id="product-show-in-slider" type="hidden" name="showInSlider" value="false">
 
             <label>Price</label>
             <input id="product-price" class="form-control" type="text" name="price" value="">
@@ -64,6 +66,9 @@
 
             <label>Image url</label>
             <input id="product-img-url" class="form-control" type="text" name="imgUrl" value="">
+
+            <label>Show in slider</label>
+            <button id="btn-toggle-slider-option" class="btn btn-default" type="button"></button>
         </form>
     </template>
     <template id="delete-product-template">

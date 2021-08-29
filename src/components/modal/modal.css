@@ -65,6 +65,10 @@
     margin-top: auto;
 }
 
+.simple-modal-content {
+    min-height: 170px;
+}
+
 .simple-modal-footer {
     width: 100%;
     border-top: 1px solid #E6E9ED;
