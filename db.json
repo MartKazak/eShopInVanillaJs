@@ -21,8 +21,8 @@
       "title": "Product 3",
       "description": "Product 3 description",
       "price": "300",
-      "imgUrl": "https://images.pexels.com/photos/421759/pexels-photo-421759.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "showInSlider": false
+      "imgUrl": "https://images.pexels.com/photos/2177482/pexels-photo-2177482.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "showInSlider": true
     },
     {
       "id": 4,
@@ -178,14 +178,6 @@
       "title": "sdf",
       "description": "",
       "price": "777",
-      "imgUrl": "https://images.pexels.com/photos/421759/pexels-photo-421759.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "showInSlider": false
-    },
-    {
-      "id": 26,
-      "title": "",
-      "description": "yteueytu",
-      "price": "789",
       "imgUrl": "https://images.pexels.com/photos/421759/pexels-photo-421759.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
       "showInSlider": false
     }

@@ -116,6 +116,6 @@ export default class Slider {
     }
 
     #addSlideClickHandler(slide) {
-        slide.addEventListener("click", e => window.location.href = "http://stackoverflow.com")
+        slide.addEventListener("click", _ => window.location.href = "http://stackoverflow.com")
     }
 }
