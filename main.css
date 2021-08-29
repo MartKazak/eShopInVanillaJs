@@ -5,12 +5,13 @@ body {
 }
 
 header {
-    background: #8ab65e;
+    background: #8cc152;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    margin-bottom: 0.5rem;
 }
 
 .logo {
@@ -58,12 +59,10 @@ main {
 
 .card {
     width: 18rem;
-    /* background: #9fb8e7; */
     background-color: #E6E9ED;
     border-radius: 4px;
     padding: 5px;
     box-shadow: 0 1px 2px rgb(0 0 0 / 40%);
-
 }
 
 .card-image > img {
@@ -84,7 +83,14 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: #8ab65e;
+    background: #8cc152;
+}
+
+.add-product-container {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: #A0D468;
+    border-radius: 4px;
 }
 
 .product-form {

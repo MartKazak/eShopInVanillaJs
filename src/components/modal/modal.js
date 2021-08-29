@@ -84,7 +84,7 @@ export default class SimpleModal {
 
         // Accept and cancel button group
         const buttonGroup = document.createElement('div');
-        buttonGroup.classList.add('simple-modal-button-group');
+        buttonGroup.classList.add('simple-modal-footer');
         window.appendChild(buttonGroup);
 
         // Accept button
