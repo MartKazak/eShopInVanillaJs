@@ -1,4 +1,4 @@
-@import "reset.css";
+@import "./reset.css";
 
 body {
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -50,14 +50,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     grid-gap: 1rem;
-    margin-bottom: 1rem;;
-    /* padding: 20px; */
-    /* margin: 20px 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; */
-    /* https://dev.to/stel/a-little-trick-to-left-align-items-in-last-row-with-flexbox-230l */
+    margin-bottom: 1rem;
 }
 
 .item {
@@ -66,7 +59,6 @@ main {
 }
 
 .card {
-    /* width: 18rem; */
     background-color: #E6E9ED;
     border-radius: 4px;
     padding: 5px;
@@ -84,7 +76,6 @@ main {
     margin: 10px 10px;
 }
 
-/*maybe flex is not needed there*/
 footer {
     display: flex;
     flex-direction: row;
@@ -132,7 +123,7 @@ label {
 }
 
 .form-control:focus {
-    border: 1px solid #4FC1E9 !important;
+    border: 1px solid #4FC1E9;
     outline: none;
 }
 
