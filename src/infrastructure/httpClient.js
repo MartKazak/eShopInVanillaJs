@@ -1,8 +1,15 @@
 class HttpClient {
     async get(url) {
-        const response = await fetch(url);
-        const data = response.json();
-        return data;
+        try {
+            const response = await fetch(url);
+
+            if (!response.ok)
+                throw new Error(`Request response: ${response.status} - ${response.statusText}.`);
+
+            return response.json();
+        } catch (error) {
+            throw error;
+        }
     }
 
     async post(url, data = {}) {
@@ -18,17 +25,24 @@ class HttpClient {
     };
 
     async #request(url, method, data = {}) {
-        const requestParams = {
-            method: method,
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        };
-        const request = new Request(url, requestParams);
-        const response = await fetch(request);
+        try {
+            const requestParams = {
+                method: method,
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+            const request = new Request(url, requestParams);
+            const response = await fetch(request);
 
-        return response.json();
+            if (!response.ok)
+                throw new Error(`Request response: ${response.status} - ${response.statusText}.`);
+
+            return response.json();
+        } catch (error) {
+            throw error;
+        }
     }
 }
 
