@@ -70,7 +70,6 @@ export default class SimpleModal {
 
         // Close
         this.closeButton = document.createElement('span');
-        // this.closeButton.type = "button";
         this.closeButton.innerHTML = "&times;";
         this.closeButton.classList.add('simple-modal-close');
         title.appendChild(this.closeButton);
@@ -103,7 +102,6 @@ export default class SimpleModal {
         this.cancelButton.textContent = this.cancelText;
         buttonGroup.appendChild(this.cancelButton);
 
-        // Let's rock
         this.parent.appendChild(this.modal);
     }
 
