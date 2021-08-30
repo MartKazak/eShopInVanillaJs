@@ -11,7 +11,7 @@
 2. <a href="https://github.com/parcel-bundler/parcel" target="_blank">parcel</a> used to bundle apllication. Also ```parcel``` used to serve application locally and for hot reloading.
 
 ## Architecture
-1. Tried to use <a href="https://hackernoon.com/writing-a-simple-mvc-model-view-controller-app-in-vanilla-javascript-u65i34lx" target="_blank">MVC</a> pattern in applliation.
+1. Tried to use <a href="https://hackernoon.com/writing-a-simple-mvc-model-view-controller-app-in-vanilla-javascript-u65i34lx" target="_blank">MVC</a> pattern in application.
 2. Tried to split UI elements into components.
 
 ## TODO:
