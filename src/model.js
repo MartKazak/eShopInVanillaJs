@@ -4,12 +4,16 @@ import Product from "./product.js";
 import State from "./productsState.js";
 
 export async function fetchProducts() {
-    const results = await httpClient.get(API_URL);
-    const products = results.map(r => new Product(r.id, r.title, r.description, r.price, r.imgUrl, r.showInSlider));
+    try {
+        const results = await httpClient.get(API_URL);
+        const products = results.map(r => new Product(r.id, r.title, r.description, r.price, r.imgUrl, r.showInSlider));
 
-    products.forEach(product => {
-        State.pushProductToState(product);
-    });
+        products.forEach(product => {
+            State.pushProductToState(product);
+        });
+    } catch (error) {
+        throw error;
+    }
 };
 
 export async function addProduct(product) {
@@ -17,7 +21,7 @@ export async function addProduct(product) {
         const productResponse = await httpClient.post(API_URL, product);
         State.unshiftProductInState(productResponse);
     } catch (error) {
-        console.error(error);
+        throw error;
     }
 };
 
@@ -26,7 +30,7 @@ export async function updateProduct(product) {
         await httpClient.put(`${API_URL}${product.id}`, product);
         State.updateProductInState(product);
     } catch (error) {
-        console.error(error);
+        throw error;
     }
 };
 
@@ -35,6 +39,6 @@ export async function deleteProduct(productId) {
         await httpClient.xdelete(`${API_URL}${productId}`);
         State.deleteProductFromState(productId);
     } catch (error) {
-        console.error(error);
+        throw error;
     }
 };

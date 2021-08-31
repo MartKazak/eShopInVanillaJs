@@ -177,3 +177,32 @@ label {
 #product-delete-confimation {
     padding-top: 1rem;
 }
+
+.error-alert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #a94442;
+    background-color: #f2838f;
+    border: #ED5565;
+    border-radius: 4px;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    opacity: 1;
+    transition: 0.6s;
+    animation: fadein .5s ease-in-out;
+    visibility: hidden;
+}
+
+.btn-close-error-alert {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1.5rem;
+}
+
+.btn-close-error-alert:hover {
+    color: #DA4453;
+}

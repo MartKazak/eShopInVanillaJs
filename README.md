@@ -16,4 +16,3 @@
 
 ## TODO:
 1. Add loaders.
-2. Add errors handling.

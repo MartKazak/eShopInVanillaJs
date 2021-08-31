@@ -4,25 +4,42 @@ import productsView from "./views/productsView.js";
 import addProductView from "./views/addProductView.js";
 import updateProductView from "./views/editProductView.js";
 import deleteProductView from "./views/deleteProductView.js";
+import errorView from "./views/errorView.js";
 
 async function controlProducts() {
-    await model.fetchProducts();
-    productsView.render(State.products);
+    try {
+        await model.fetchProducts();
+        productsView.render(State.products);
+    } catch (error) {
+        errorView.renderError(error);
+    }
 }
 
 async function controlAddProduct(product) {
-    await model.addProduct(product);
-    productsView.render(State.products);
+    try {
+        await model.addProduct(product);
+        productsView.render(State.products);
+    } catch (error) {
+        errorView.renderError(error);
+    }
 }
 
 async function controlUpdateProduct(product) {
-    await model.updateProduct(product);
-    productsView.render(State.products);
+    try {
+        await model.updateProduct(product);
+        productsView.render(State.products);
+    } catch (error) {
+        errorView.renderError(error);
+    }
 }
 
 async function controlDeleteProduct(productId) {
-    await model.deleteProduct(productId);
-    productsView.render(State.products);
+    try {
+        await model.deleteProduct(productId);
+        productsView.render(State.products);
+    } catch (error) {
+        errorView.renderError(error);
+    }
 }
 
 function init() {
