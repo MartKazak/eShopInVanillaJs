@@ -1,8 +1,10 @@
 class ErrorView {
     renderError(errorMessage) {
-        const errorAlert = document.querySelector(".error-alert");
-        errorAlert.insertAdjacentHTML('afterbegin', errorMessage);
-        errorAlert.style.visibility = "visible";
+        const errorAlertElement = document.querySelector(".error-alert");
+        const errorMessageElement = document.querySelector(".error-message");
+        errorMessageElement.innerText = errorMessage;
+        errorAlertElement.style.opacity = "1";
+        errorAlertElement.style.visibility = "visible";
         this.#addHandlerShowError();
     }
 

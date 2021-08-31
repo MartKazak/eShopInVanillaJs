@@ -15,15 +15,10 @@ class DeleteProductView {
                 this.#parentElement.innerHTML = `Do you really want to delete product: '${title}'`;
 
                 const addProductModal = new SimpleModal("Remove product", null, null, null, this.#parentElement);
+                const modalResponse = await addProductModal.question();
 
-                try {
-                    const modalResponse = await addProductModal.question();
-
-                    if (modalResponse) {
-                        handler(id);
-                    }
-                } catch(err) {
-                    console.log(err);
+                if (modalResponse) {
+                    handler(id);
                 }
             }
         });

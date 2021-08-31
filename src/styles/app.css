@@ -205,4 +205,5 @@ label {
 
 .btn-close-error-alert:hover {
     color: #DA4453;
+    cursor: pointer;
 }

@@ -16,16 +16,11 @@ class UpdateProductView {
                 this.#setInSliderBtnText();
 
                 const addProductModal = new SimpleModal("Add product", null, null, null, this.#parentElement);
+                const modalResponse = await addProductModal.question();
 
-                try {
-                    const modalResponse = await addProductModal.question();
-
-                    if (modalResponse) {
-                        const product = this.#getProductFromForm();
-                        handler(product);
-                    }
-                } catch(err) {
-                    console.log(err);
+                if (modalResponse) {
+                    const product = this.#getProductFromForm();
+                    handler(product);
                 }
             }
         });
